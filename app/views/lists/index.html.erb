@@ -6,20 +6,14 @@
 
 <div class="d-flex justify-content-between">
 <h2> My Lists</h2>
-<a class="btn btn-flat" href="#">Create a Movie List</a>
+<%= link_to 'Create a Movie List', new_list_path, class:"btn btn-flat" %>
 </div>
 
-
 <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    Comedy
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    Animated
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-    Action
-  </div>
+  <% @lists.each do |list| %>
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+     <%# argument (the brackets) only necessary when we need an id, because we're displaying a show page for a specific list %>
+     <%= link_to list.name, list_path(list.id)  %>
+   </div>
+  <% end %>
 </div>

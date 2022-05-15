@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   # needs to access list_id
   # to access list_id we need an instance variable which has list_id
   # so we need to get list_id through params (find)
